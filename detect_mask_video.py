@@ -69,7 +69,9 @@ def detect_and_predict_mask(image, faceNet, maskNet):
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        uic.loadUi("FaceMaskDetector.ui", self)
+        # uic.loadUi("FaceMaskDetector.ui", self)
+        ui_file_path = r'FaceMaskDetector.ui'
+        uic.loadUi(ui_file_path, self)
         self.datetime.setText(strftime("%H:%M:%S %d/%m/%Y"))
         self.browse_btn.clicked.connect(self.file_display)
         self.timer = QTimer()
